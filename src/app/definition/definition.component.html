@@ -1,0 +1,163 @@
+<h2>Definition</h2>
+
+<form [formGroup]="definitionForm" novalidate>
+  <div class="form-group">
+    <label class="center-block">KPI Name:</label>
+    <input class="form-control" formControlName="kpiName" required>
+  </div>
+
+  <div class="form-group">
+    <label class="center-block">Description:</label>
+    <textarea class="form-control" formControlName="description"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label class="center-block">Data Type:</label>
+    <input class="form-control" formControlName="dataType">
+  </div>
+
+  <div class="form-group">
+    <label class="center-block">Display Name:</label>
+    <input class="form-control" formControlName="displayName">
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label class="center-block">KPI Type:</label>
+      <input class="form-control" formControlName="kpiType">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label class="center-block">UOM:</label>
+      <input class="form-control" formControlName="uom">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label class="center-block">Asset:</label>
+      <input class="form-control" formControlName="asset">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label class="center-block">Manual:</label>
+      <div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="manual" id="inlineRadio1" value="true" formControlName="manual">
+          <label class="form-check-label" for="inlineRadio1">True</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="manual" id="inlineRadio2" value="false" formControlName="manual">
+          <label class="form-check-label" for="inlineRadio2">False</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label class="center-block">Frequency:</label>
+      <input class="form-control" formControlName="frequency">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label class="center-block">Unit:</label>
+      <select class="form-control" formControlName="unit">
+        <option *ngFor="let unit of units" [value]="unit">{{unit}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label class="center-block">Reporting Aggregation:</label>
+      <select class="form-control" formControlName="reportingAggregation">
+        <option *ngFor="let reportingAggregation of reportingAggregations" [value]="reportingAggregation">{{reportingAggregation}}</option>
+      </select>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label class="center-block">State:</label>
+      <select class="form-control" formControlName="state">
+        <option *ngFor="let state of states" [value]="state">{{state}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label class="center-block">Good Dorection:</label>
+      <select class="form-control" formControlName="goodDirection">
+        <option *ngFor="let goodDirection of goodDirections" [value]="goodDirection">{{goodDirection}}</option>
+      </select>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label class="center-block">Effective DateTime:</label>
+      <input class="form-control" formControlName="effectiveDateTime">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label class="center-block">Raised Events:</label>
+      <input class="form-control" formControlName="raiseEvents">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label class="center-block">Security Code:</label>
+      <input class="form-control" formControlName="securityCode">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label class="center-block">Based on:</label>
+      <input class="form-control" formControlName="basedOn">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label class="center-block">Calculation Delay:</label>
+      <input class="form-control" formControlName="calculationDealy">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label class="center-block">Is Composite:</label>
+      <div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="isComposite" id="inlineRadio3" value="true" formControlName="isComposite">
+          <label class="form-check-label" for="inlineRadio1">True</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="isComposite" id="inlineRadio4" value="false" formControlName="isComposite">
+          <label class="form-check-label" for="inlineRadio2">False</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label class="center-block">Time Variants:</label>
+      <select class="form-control" formControlName="timeVariant">
+        <option *ngFor="let timeVariant of timeVariants" [value]="timeVariant">{{timeVariant}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label class="center-block">Limit Source:</label>
+      <input class="form-control" formControlName="limitSource">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label class="center-block">Asset Attribute:</label>
+      <input class="form-control" formControlName="assetAttribute">
+    </div>
+  </div>
+
+</form>
+
+<p>Form value: {{ definitionForm.value | json }}</p>
+<p>Form status: {{ definitionForm.status | json }}</p>
