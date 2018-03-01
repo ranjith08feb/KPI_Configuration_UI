@@ -1,7 +1,22 @@
-<div class="container">
+<!-- <div class="col-md-12">
   <h1>KPI Configuration</h1>
-  <nav>
-    <a routerLink="/dashboard">Dashboard</a>
+
+  <nav *ngFor="let item of items" class="col-md-3">
+    <a routerLink="/{{item.link}}">{{item.name}}</a>
   </nav>
+ 
   <router-outlet></router-outlet>
+</div> -->
+
+<div class="col-12">
+  <div class="row">
+      <ul class="nav flex-column col-2">
+          <li class="nav-item" *ngFor="let item of items">
+            <a class="nav-link" routerLink="/{{item.link}}" routerLinkActive="selected">{{item.name}}</a>
+          </li>
+        </ul>
+        <div class="col-10">
+        <router-outlet></router-outlet>
+        </div>
+  </div>
 </div>

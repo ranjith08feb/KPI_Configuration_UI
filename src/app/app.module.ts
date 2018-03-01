@@ -45,6 +45,7 @@ import { AppComponent }        from './app.component';
 import { DefinitionComponent } from './definition/definition.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InputsComponent } from './inputs/inputs.component';
+import { LimitsComponent } from './limits/limits.component';
 
 @NgModule({
   exports: [
@@ -80,25 +81,20 @@ import { InputsComponent } from './inputs/inputs.component';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-  ]
-})
-
-export class AngularMaterialModule {}
-
-
-@NgModule({
+  ],
   declarations: [
     AppComponent,
     DefinitionComponent,
     DashboardComponent,
-    InputsComponent
+    InputsComponent,
+    LimitsComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    AngularMaterialModule,
-    MatNativeDateModule,
+    // AngularMaterialModule,
+    // MatNativeDateModule,
     AppRoutingModule
   ],
   providers: [],

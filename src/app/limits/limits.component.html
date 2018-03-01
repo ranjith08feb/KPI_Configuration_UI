@@ -1,0 +1,15 @@
+<h2> Limits </h2>
+
+<form [formGroup]="limitsForm" novalidate>
+      <div class="form-group">
+          <label class="center-block">Target</label>
+          <input class="form-control" formControlName="target" required>
+      </div>
+
+      <div class="form-group">
+        <label class="center-block">Warning Limit</label>
+        <input class="form-control" formControlName="warningLimit" required>
+    </div>
+</form>
+
+<p>Form value: {{ limitsForm.value | json }}</p>

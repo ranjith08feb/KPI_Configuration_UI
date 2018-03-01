@@ -1,5 +1,5 @@
 export class Definition{
-    kpi: string;
+    kpiName: string;
     description: string;
     dataType: string;
     displayName: string;
